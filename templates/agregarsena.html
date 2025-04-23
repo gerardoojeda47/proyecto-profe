@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="/agregar/" id="agregarFormulario">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Nombre del Sena</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Agregar Sena" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Guardar Sena</button>
+    </form>
+
+</div>
+
+{% endblock %}

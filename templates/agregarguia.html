@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container">
+  <h2>Registrar Nueva Guía</h2>
+  <form method="POST" enctype="multipart/form-data" id="formGuia">
+    <label>Nombre de la Guía:</label>
+    <input type="text" name="nombreguia" id="nombreguia" required /><br /><br />
+    
+    <label>Descripción:</label>
+    <input type="text" name="descripcions" id="descripcions" required /><br /><br />
+    
+    <label>Programa de Formación:</label>
+    <input type="text" name="programaformacion" id="programaformacion" required /><br /><br />
+    
+    <label>Documento:</label>
+    <input type="file" name="documento" id="documento" accept="application/pdf" required /><br /><br />
+    
+    <label>Fecha:</label>
+    <input type="date" name="fecha" id="fecha" required /><br /><br />
+    
+    <label>Instructor a Cargo:</label>
+    <select name="intructordeproceso" id="intructordeproceso" required>
+      <option value="">--Selecciona--</option>
+      {% for instructor in instructores %}
+      <option value="{{ instructor.id }}">{{ instructor.nombrecompleto }}</option>
+      {% endfor %}
+    </select><br /><br />
+    <button type="submit">Guardar Guía</button>
+  </form>
+</div>
+{% endblock %}
