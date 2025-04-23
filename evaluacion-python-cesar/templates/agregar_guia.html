@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Agregar Nueva Guía</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" required><br><br>
+    </div>
+    <div>
+        <label for="description">Descripción:</label>
+        <input type="text" name="description" required><br><br>
+    </div>
+    <div>
+        <label for="program">Programa:</label>
+        <input type="text" name="program" required><br><br>
+    </div>
+    <div>
+        <label for="pdf">PDF:</label>
+        <input type="file" name="pdf" accept="application/pdf" required><br><br>
+    </div>
+    <div>
+        <label for="instructor">Instructor:</label>
+        <input type="text" name="instructor_id" required><br><br>
+    </div>
+    <button type="submit">Guardar Guía</button>
+</form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Lista de Guías</h2>
+  
+  {% if guias %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre de la Guía</th>
+          <th>Descripción</th>
+          <th>Programa de Formación</th>
+          <th>Documento</th>
+          <th>Fecha</th>
+          <th>Instructor</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for guia in guias %}
+          <tr>
+            <td>{{ guia.nombreguia }}</td>
+            <td>{{ guia.descripcions }}</td>
+            <td>{{ guia.programaformacion }}</td>
+            <td>
+              <a href="{{ url_for('download_file', filename=guia.documento) }}" target="_blank">
+                <button type="button">Ver PDF</button>
+              </a>
+            </td>
+            <td>{{ guia.fecha }}</td>
+            <td>{{ guia.intructordeproceso.nombrecompleto }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No se han encontrado guías registradas.</p>
+  {% endif %}
+</div>
+{% endblock %}
