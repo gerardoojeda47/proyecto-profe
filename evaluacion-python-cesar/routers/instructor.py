@@ -23,7 +23,7 @@ def generar_contrasena(longitud=8):
 def enviar_correo_asincrono(correo_destino, asunto, mensaje):
     def enviar():
         try:
-            yag = yagmail.SMTP("santiagoquilindo32@gmail.com", "devoxgkdtzkduepy", encoding="utf-8")
+            yag = yagmail.SMTP("gerardozapatos@gmail.com", "ktyvkqnowaoytjnm", encoding="utf-8")
             yag.send(to=correo_destino, subject=asunto, contents=mensaje.encode('utf-8').decode('utf-8'))
             print("Correo enviado exitosamente.")
         except Exception as e:
