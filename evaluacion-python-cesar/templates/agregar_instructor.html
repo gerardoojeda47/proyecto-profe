@@ -1,6 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #218838;
+    }
+</style>
+
 <div class="container">
     <form method="POST" action="/agregarintructor/" id="agregarFormularios">
         <div class="form-group">
@@ -22,7 +72,8 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-success">Guardar Instructor</button>
+        <button type="submit">Guardar Instructor</button>
     </form>
 </div>
 {% endblock %}
+
