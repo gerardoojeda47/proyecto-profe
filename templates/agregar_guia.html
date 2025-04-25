@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+</style>
+
+<h2>Agregar Nueva Guía</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" required>
+    </div>
+    <div>
+        <label for="description">Descripción:</label>
+        <input type="text" name="description" required>
+    </div>
+    <div>
+        <label for="program">Programa:</label>
+        <input type="text" name="program" required>
+    </div>
+    <div>
+        <label for="pdf">PDF:</label>
+        <input type="file" name="pdf" accept="application/pdf" required>
+    </div>
+    <div>
+        <label for="instructor_id">Instructor:</label>
+        <input type="text" name="instructor_id" required>
+    </div>
+    <button type="submit">Guardar Guía</button>
+</form>
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Programa</th>
+        <th>Instructor</th>
+        <th>Fecha</th>
+    </tr>
+    {% for guide in guides %}
+    <tr>
+        <td>{{ guide.name }}</td>
+        <td>{{ guide.description }}</td>
+        <td>{{ guide.program }}</td>
+        <td>{{ guide.instructor.name }}</td>
+        <td>{{ guide.date_uploaded }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

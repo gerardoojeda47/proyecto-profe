@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <a class="nav-item nav-link" href="/agregar">Agregar Sucursal principal</a>
+    <a class="nav-item nav-link" href="/agregarintructor">Agregar Nombre Instructor</a>
+    <a class="nav-item nav-link" href="/agregarguia">Agregar Nombre de la Guia</a>
+    <a class="nav-item nav-link" href="/login">Login inicio Sesion</a>
+    <a class="nav-item nav-link" href="/listarguia">Listar guias</a>
+    <li>
+      <form action="{{ url_for('logout') }}" method="get">
+        <button type="submit">Cerrar sesión</button>
+      </form>
+    </li> 
+    </div>
+  </div>
+</nav>

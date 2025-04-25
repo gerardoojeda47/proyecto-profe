@@ -1,0 +1,92 @@
+{% extends 'base.html' %} 
+{% block content %}
+<style>
+  .container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #444;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="file"],
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #218838;
+  }
+</style>
+
+<div class="container">
+  <h2>Registrar Nueva Guía</h2>
+  <form method="POST" enctype="multipart/form-data" id="formGuia">
+    <label for="nombreguia">Nombre de la Guía:</label>
+    <input type="text" name="nombreguia" id="nombreguia" required />
+    
+    <label for="descripcions">Descripción:</label>
+    <input type="text" name="descripcions" id="descripcions" required />
+    
+    <label for="programaformacion">Programa de Formación:</label>
+    <select name="programaformacion" id="programaformacion" required>
+      <option value="">--Selecciona--</option>
+      <option value="programa1">Tecnólogo en Software y Sistemas</option>
+      <option value="programa2">Tecnólogo en Diseño y Multimedia</option>
+      <option value="programa3">Tecnólogo en Gestión y Administración</option>
+      <option value="programa4">Tecnólogo en Seguridad y Salud</option>
+    </select>
+    
+    <label for="documento">Documento:</label>
+    <input type="file" name="documento" id="documento" accept="application/pdf" required />
+    
+    <label for="fecha">Fecha:</label>
+    <input type="date" name="fecha" id="fecha" required />
+    
+    <label for="intructordeproceso">Instructor a Cargo:</label>
+    <select name="intructordeproceso" id="intructordeproceso" required>
+      <option value="">--Selecciona--</option>
+      {% for instructor in instructores %}
+      <option value="{{ instructor.id }}">{{ instructor.nombrecompleto }}</option>
+      {% endfor %}
+    </select>
+    
+    <button type="submit">Guardar Guía</button>
+  </form>
+</div>
+{% endblock %}
